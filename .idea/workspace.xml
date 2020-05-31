@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f0f26746-e69e-4238-95b1-98500a9e7a36" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/middleware/slice_router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,10 +43,13 @@
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../go-gateway" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/proxy" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspace\go-proxy\proxy" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\workspace\go-proxy\demo" />
     </key>

@@ -4,6 +4,7 @@ import (
 	"context"
 	"math"
 	"net/http"
+	"strings"
 )
 
 const abortIndex int8 = math.MaxInt8 / 2
@@ -31,6 +32,29 @@ type SliceRouterContext struct {
 	index int8
 }
 
-func newSliceRouteContext(rw http.ResponseWriter, req *http.Request)  {
-	
+func newSliceRouteContext(rw http.ResponseWriter, req *http.Request, r *SliceRouter) *SliceRouterContext {
+	newSliceGroup := &SliceGroup{}
+
+	// 最长 url 前缀匹配,最长的等于它
+	matchUrlLen := 0
+	for _, group := range r.groups {
+		// 如果请求的 url 中符合已经设置的 uri
+		if strings.HasPrefix(req.RequestURI, group.path) {
+			pathLen := len(group.path)
+			if pathLen > matchUrlLen {
+				matchUrlLen = pathLen
+				// path 和 handler
+				*newSliceGroup = *group
+			}
+		}
+	}
+
+	c := &SliceRouterContext{Rw: rw, Req:req, Ctx:req.Context(), SliceGroup: newSliceGroup}
+	c.Reset()
+	return c
 }
+
+func (c *SliceRouterContext) Reset()  {
+	c.index = -1
+}
+
